@@ -29,116 +29,160 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-12 px-4 sm:px-8" style={{ backgroundColor: '#1C1C1C' }}>
-      <div className="max-w-4xl mx-auto pt-16">
-        
-        {/* Heading */}
-        <motion.h1
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#E6E6E6]"
-        >
-          Contact Me
-        </motion.h1>
+  <section
+  id="contact"
+  className="min-h-screen py-12 px-4 sm:px-8"
+  style={{ backgroundColor: '#111111' }} // Matte black background
+>
+  <div className="max-w-4xl mx-auto pt-16">
+    {/* Heading */}
+    <div className="text-center mb-20">
+  <motion.h2 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.6 }}
+    className="text-4xl md:text-5xl font-bold mb-4 text-[#E6E6E6]" // Make main text light gray
+  >
+    Contact <span className="text-[#F8B400]">Me</span>
+  </motion.h2>
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: '100px' }}
+    transition={{ duration: 0.8 }}
+    className="h-1 bg-[#F8B400] mx-auto"
+  ></motion.div>
+</div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          
-          {/* Contact Form */}
-          <div className="w-full md:w-1/2">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Web3Forms Access Key */}
-              <input type="hidden" name="access_key" value="b42ce9f4-9515-4ee5-9a90-5b88a75b2c16" />
 
-              {/* Name */}
-              <div>
-                <label htmlFor="name" className="block mb-2 text-sm font-medium text-[#E6E6E6]">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-2 rounded-lg focus:outline-none bg-[#4A4A4A] text-[#E6E6E6]"
-                />
-              </div>
+    <div className="flex flex-col md:flex-row gap-8">
+      {/* Contact Form */}
+      <div className="w-full md:w-1/2">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            type="hidden"
+            name="access_key"
+            value="b42ce9f4-9515-4ee5-9a90-5b88a75b2c16"
+          />
 
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-[#E6E6E6]">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-2 rounded-lg focus:outline-none bg-[#4A4A4A] text-[#E6E6E6]"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#E6E6E6]">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  minLength="10"
-                  className="w-full px-4 py-2 rounded-lg focus:outline-none bg-[#4A4A4A] text-[#E6E6E6]"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="px-6 py-3 rounded-lg font-medium transition-colors hover:bg-gray-600 bg-[#010101] text-[#E6E6E6]"
-                disabled={submitted}
-              >
-                {submitted ? 'Submitted ✅' : 'Send Message'}
-              </button>
-            </form>
+          {/* Name */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block mb-2 text-sm font-medium text-[#E6E6E6]"
+            >
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your full name"
+              className="w-full px-4 py-2 rounded-lg bg-[#121212] text-[#E6E6E6] placeholder-[#6D6D6D] focus:outline-none focus:ring-2 focus:ring-[#B8860B] shadow-sm shadow-black"
+            />
           </div>
 
-          {/* Contact Info */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start space-y-8 text-[#E6E6E6]">
-            <h3 className="text-2xl font-semibold">Get in touch</h3>
-
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <FaEnvelope className="text-xl text-gray-400" />
-                <a href="mailto:adarshpujari55@gmail.com" className="hover:underline">adarshpujari55@gmail.com</a>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <FaLinkedin className="text-xl text-gray-400" />
-                <a href="https://linkedin.com/in/adarsh-pujari" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  Adarsh Pujari
-                </a>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <FaGithub className="text-xl text-gray-400" />
-                <a href="https://github.com/24adarsh" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  24adarsh
-                </a>
-              </div>
-            </div>
-
-            <div className="pt-8">
-              <p className="text-sm text-gray-400">
-                Feel free to reach out for collaborations or just a friendly hello!
-              </p>
-            </div>
+          {/* Email */}
+          <div>
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-[#E6E6E6]"
+            >
+              Your Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@mail.com"
+              className="w-full px-4 py-2 rounded-lg bg-[#121212] text-[#E6E6E6] placeholder-[#6D6D6D] focus:outline-none focus:ring-2 focus:ring-[#B8860B] shadow-sm shadow-black"
+            />
           </div>
 
+          {/* Message */}
+          <div>
+            <label
+              htmlFor="message"
+              className="block mb-2 text-sm font-medium text-[#E6E6E6]"
+            >
+              Your Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              minLength="10"
+              placeholder="Write your message here..."
+              className="w-full px-4 py-2 rounded-lg bg-[#121212] text-[#E6E6E6] placeholder-[#6D6D6D] focus:outline-none focus:ring-2 focus:ring-[#B8860B] shadow-sm shadow-black"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={submitted}
+            className="w-full md:w-auto px-6 py-3 rounded-lg font-medium bg-[#121212] text-[#E6E6E6] border border-[#B8860B] transition-colors hover:bg-[#B8860B] hover:text-[#121212]"
+          >
+            {submitted ? 'Submitted ' : 'Send Message'}
+          </button>
+        </form>
+      </div>
+
+      {/* Contact Info */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start space-y-8 text-[#E6E6E6]">
+        <h3 className="text-2xl font-semibold">Get in touch</h3>
+
+        <div className="space-y-4">
+          <div className="flex items-center space-x-4">
+            <FaEnvelope className="text-xl text-[#6D6D6D] transition-colors hover:text-[#B8860B]" />
+            <a
+              href="mailto:adarshpujari55@gmail.com"
+              className="hover:underline hover:text-[#B8860B]"
+            >
+              adarshpujari55@gmail.com
+            </a>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <FaLinkedin className="text-xl text-[#6D6D6D] transition-colors hover:text-[#B8860B]" />
+            <a
+              href="https://www.linkedin.com/in/adarsh-pujari-76809424b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline hover:text-[#B8860B]"
+            >
+              Adarsh Pujari
+            </a>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <FaGithub className="text-xl text-[#6D6D6D] transition-colors hover:text-[#B8860B]" />
+            <a
+              href="https://github.com/24adarsh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline hover:text-[#B8860B]"
+            >
+              24adarsh
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-8">
+          <p className="text-sm italic text-[#6D6D6D]">
+            Feel free to reach out for collaborations or just a friendly hello!
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+
+
+
   );
 };
 

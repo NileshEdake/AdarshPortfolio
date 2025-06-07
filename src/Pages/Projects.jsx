@@ -73,7 +73,7 @@ const Projects = () => {
 
   return (
     <section id='projects'>
-    <div className="min-h-screen bg-[#010101] text-[#E6E6E6] py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0D0D0D] text-[#E6E6E6] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Projects Header */}
         <div className="text-center mb-20">
@@ -83,13 +83,14 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            My <span className="text-[#6D6D6D]">Projects</span>
+            My <span className="text-[#F8B400]">Projects</span>
+
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: '100px' }}
             transition={{ duration: 0.8 }}
-            className="h-1 bg-[#4A4A4A] mx-auto"
+            className="h-1 bg-[#00ADB5] mx-auto"
           ></motion.div>
         </div>
 
@@ -104,11 +105,13 @@ const Projects = () => {
               variants={cardVariants}
               className="relative group"
             >
-              <div className="h-full bg-[#1C1C1C] rounded-xl overflow-hidden border border-[#4A4A4A] transition-all duration-300 group-hover:border-[#6D6D6D]">
+              <div className="h-full bg-[#1A1A1A] rounded-xl overflow-hidden border border-[#00ADB5] transition-all duration-300 group-hover:border-[#F8B400]">
+
                 <div className="p-6 pb-0">
                   <div className="flex justify-between items-start">
                     <h3 className="text-2xl font-bold">{project.title}</h3>
-                    <span className="text-xs uppercase tracking-wider bg-[#4A4A4A] text-[#E6E6E6] px-3 py-1 rounded-full">
+                  <span className="text-xs uppercase tracking-wider bg-[#00ADB5] text-[#FFFFFF] px-3 py-1 rounded-full">
+
                       {project.category}
                     </span>
                   </div>
@@ -116,7 +119,7 @@ const Projects = () => {
                 <div className="p-6 pt-4">
                   <p className="mb-6">{project.description}</p>
                   <div>
-                    <h4 className="text-sm font-semibold mb-3 text-[#6D6D6D]">TECH STACK</h4>
+                    <h4 className="text-sm font-semibold mb-3 text-[#F8B400]">TECH STACK</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, i) => (
                         <motion.span
@@ -138,58 +141,59 @@ const Projects = () => {
 
         {/* Internship Section */}
         <div className="text-center mb-16">
-          <motion.h2 
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeIn}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            <span className="relative z-10">Professional Experience</span>
-          </motion.h2>
-          <div className="h-1 bg-[#4A4A4A] w-32 mx-auto"></div>
-        </div>
+  <motion.h2 
+    initial="hidden"
+    whileInView="visible"
+    variants={fadeIn}
+    className="text-4xl md:text-5xl font-bold mb-4"
+  >
+    <span className="relative z-10 text-[#F8B400]">Professional Experience</span>
+  </motion.h2>
+  <div className="h-1 bg-[#00ADB5] w-32 mx-auto"></div>
+</div>
 
-        <div className="space-y-10">
-          {internships.map((internship) => (
-            <motion.div
-              key={internship.id}
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="relative pl-12 before:absolute before:left-6 before:top-0 before:h-full before:w-1 before:bg-[#4A4A4A]"
-            >
-              <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-[#1C1C1C] border-4 border-[#4A4A4A] flex items-center justify-center">
-                <span className="text-xl">🏢</span>
-              </div>
-              <div className="bg-[#1C1C1C] p-6 rounded-xl ml-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold">{internship.role}</h3>
-                    <p className="text-[#6D6D6D]">{internship.company}</p>
-                  </div>
-                  <span className="bg-[#4A4A4A] text-[#E6E6E6] text-sm px-3 py-1 rounded-full whitespace-nowrap">
-                    {internship.duration}
-                  </span>
-                </div>
-                <p className="my-4">{internship.description}</p>
-                <div className="mt-4">
-                  <h4 className="text-sm font-semibold mb-2">Skills Gained</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {internship.skills.map((skill, i) => (
-                      <span 
-                        key={i}
-                        className="bg-[#4A4A4A] text-[#E6E6E6] text-xs px-3 py-1 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+<div className="space-y-10">
+  {internships.map((internship) => (
+    <motion.div
+      key={internship.id}
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="relative pl-12 before:absolute before:left-6 before:top-0 before:h-full before:w-1 before:bg-[#00ADB5]"
+    >
+      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-[#121212] border-4 border-[#00ADB5] flex items-center justify-center">
+        <span className="text-xl">🏢</span>
+      </div>
+      <div className="bg-[#121212] p-6 rounded-xl ml-4 border border-[#00ADB5] hover:border-[#F8B400] transition-all duration-300 cursor-pointer">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-xl font-bold text-[#F8B400]">{internship.role}</h3>
+            <p className="text-[#AAAAAA]">{internship.company}</p>
+          </div>
+          <span className="bg-[#00ADB5] text-black text-sm px-3 py-1 rounded-full whitespace-nowrap">
+            {internship.duration}
+          </span>
         </div>
+        <p className="my-4 text-[#E6E6E6]">{internship.description}</p>
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold mb-2 text-[#F8B400]">Skills Gained</h4>
+          <div className="flex flex-wrap gap-2">
+            {internship.skills.map((skill, i) => (
+              <span 
+                key={i}
+                className="bg-[#00ADB5] text-black text-xs px-3 py-1 rounded-full hover:bg-[#F8B400] transition-all duration-300 cursor-default"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </div>
     </section>

@@ -39,63 +39,64 @@ const Home = () => {
 
   return (
     <section id='home'>
-    <motion.div 
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="min-h-screen bg-[#010101] text-[#E6E6E6] flex flex-col items-center justify-center p-8"
-    >
-      <div className="max-w-2xl text-center">
-        {/* Header */}
-        <motion.h1 
-          variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold mb-4"
-        >
-          Adarsh Pujari
-        </motion.h1>
-        
-        {/* Tagline */}
-        <motion.h2 
-          variants={itemVariants}
-          className="text-lg md:text-xl text-[#6D6D6D] mb-8"
-        >
-          "AI Enthusiast | Machine Learning Explorer | Problem Solver"
-        </motion.h2>
-        
-        {/* Brief Intro */}
-        <motion.p 
-          variants={itemVariants}
-          className="text-base md:text-lg mb-12 text-[#E6E6E6]"
-        >
-          Passionate about advancing skills in AI and Data Science to solve real-world challenges using machine learning.
-        </motion.p>
-        
-        {/* CTA Buttons */}
-        <motion.div 
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center gap-4"
-        >
-          <motion.a 
-            href="#projects"
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            className="bg-[#4A4A4A] hover:bg-[#6D6D6D] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="min-h-screen bg-[#0D0D0D] text-[#E6E6E6] flex flex-col items-center justify-center p-8"
+      >
+        <div className="max-w-2xl text-center">
+          
+          {/* Header */}
+          <motion.h1 
+            variants={itemVariants}
+            className="text-4xl md:text-5xl font-bold mb-4"
           >
-            View Projects
-          </motion.a>
-          <motion.a 
-            href="#contact"
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            className="border-2 border-[#4A4A4A] hover:border-[#6D6D6D] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+            Adarsh Pujari
+          </motion.h1>
+          
+          {/* Tagline */}
+          <motion.h2 
+            variants={itemVariants}
+            className="text-lg md:text-xl text-[#9A9A9A] mb-8"
           >
-            Contact Me
-          </motion.a>
-        </motion.div>
-      </div>
-    </motion.div>
+            "Python developer | Machine Learning Explorer | Problem Solver"
+          </motion.h2>
+          
+          {/* Brief Intro */}
+          <motion.p 
+            variants={itemVariants}
+            className="text-base md:text-lg mb-12 text-[#E6E6E6]"
+          >
+            My journey includes leading teams, building intelligent systems, and competing in national-level tech events.
+          </motion.p>
+          
+          {/* CTA Buttons */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <motion.a 
+              href="#projects"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              className="bg-[#00ADB5] hover:bg-[#019CA5] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+            >
+              View Projects
+            </motion.a>
+            <motion.a 
+              href="#contact"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              className="border-2 border-[#00ADB5] hover:border-[#F8B400] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+            >
+              Contact Me
+            </motion.a>
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 };

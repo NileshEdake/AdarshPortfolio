@@ -123,18 +123,27 @@ const openCertificate = (cert) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-[#010101] text-[#E6E6E6] py-24 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-[#0D0D0D] text-[#E6E6E6] py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
         {/* Page Title */}
-        <motion.h1
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        >
-          Education & Certifications
-        </motion.h1>
+        <div className="text-center mb-20">
+                  <motion.h2 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-4xl md:text-5xl font-bold mb-4"
+                  >
+                    Education  <span className="text-[#F8B400]">& certificate</span>
+        
+                  </motion.h2>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: '100px' }}
+                    transition={{ duration: 0.8 }}
+                    className="h-1 bg-[#00ADB5] mx-auto"
+                  ></motion.div>
+                </div>
 
         {/* Education Timeline */}
         <motion.div
@@ -143,13 +152,13 @@ const openCertificate = (cert) => {
           animate="visible"
           className="mb-16"
         >
-          <h2 className="text-2xl font-semibold mb-8 text-[#E6E6E6] border-b border-[#4A4A4A] pb-2">
+          <h2 className="text-2xl font-semibold mb-8 text-[#E6E6E6] border-b border-[#00ADB5] pb-2">
             Academic Journey
           </h2>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-5 h-full w-0.5 bg-[#4A4A4A] transform -translate-x-1/2"></div>
+            <div className="absolute left-5 h-full w-0.5 bg-[#00ADB5] transform -translate-x-1/2"></div>
 
             {educationData.map((edu, index) => (
               <motion.div
@@ -159,17 +168,17 @@ const openCertificate = (cert) => {
                 className="relative pl-16 pb-8"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-5 top-1 w-4 h-4 rounded-full bg-[#E6E6E6] transform -translate-x-1/2"></div>
+                <div className="absolute left-5 top-1 w-4 h-4 rounded-full bg-[#F8B400] transform -translate-x-1/2"></div>
 
                 {/* Education card */}
                 <div className="bg-[#1C1C1C] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start">
-                    <span className="text-2xl mr-4">{edu.icon}</span>
+                    <span className="text-2xl mr-4 text-[#00ADB5]">{edu.icon}</span>
                     <div>
                       <h3 className="text-xl font-bold text-[#E6E6E6]">
                         {edu.degree}
                       </h3>
-                      <p className="text-[#6D6D6D]">{edu.institution}</p>
+                      <p className="text-[#9A9A9A]">{edu.institution}</p>
                       <p className="text-[#E6E6E6] mt-2">{edu.details}</p>
                     </div>
                   </div>
@@ -185,7 +194,7 @@ const openCertificate = (cert) => {
   initial="hidden"
   animate="visible"
 >
-  <h2 className="text-2xl font-semibold mb-8 text-[#E6E6E6] border-b border-[#4A4A4A] pb-2">
+  <h2 className="text-2xl font-semibold mb-8 text-[#E6E6E6] border-b border-[#00ADB5] pb-2">
     Certifications
   </h2>
 
@@ -232,7 +241,7 @@ const openCertificate = (cert) => {
           className="bg-[#1C1C1C] p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center cursor-pointer"
           onClick={() => openCertificate(cert)}
         >
-          <div className="w-28 h-28 mb-4 bg-[#2A2A2A] rounded-lg overflow-hidden border border-[#4A4A4A]">
+          <div className="w-28 h-28 mb-4 bg-[#2A2A2A] rounded-lg overflow-hidden border border-[#00ADB5]">
             <img
               src={cert.image}
               alt={cert.name}
