@@ -42,10 +42,12 @@ const Navbar = () => {
     }),
     hover: {
       scale: 1.05,
-      color: '#FFFFFF',
+      color: '#F8B400', // Gold accent on hover
       transition: { duration: 0.2 },
     },
   };
+
+  const isActive = (href) => activeSection === href.replace('#', '');
 
   return (
     <motion.nav
@@ -56,9 +58,12 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-         <a href="#home" className="text-xl font-semibold text-[#E6E6E6] hover:text-white transition-colors duration-300">
-  Adarsh
-</a>
+          <a
+            href="#home"
+            className="text-xl font-semibold text-[#00ADB5] hover:text-[#F8B400] transition-colors duration-300"
+          >
+            ADARSH
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
@@ -74,7 +79,12 @@ const Navbar = () => {
                 >
                   <a
                     href={item.href}
-                    className={`px-3 py-2 rounded-md text-sm font-medium text-[#E6E6E6] hover:text-white transition-colors duration-300`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300
+                      ${
+                        isActive(item.href)
+                          ? 'text-[#F8B400]'
+                          : 'text-[#E6E6E6] hover:text-[#F8B400]'
+                      }`}
                   >
                     {item.name}
                   </a>
@@ -87,15 +97,25 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-[#6D6D6D] hover:text-[#E6E6E6]"
+              className="p-2 rounded-md text-[#E6E6E6] hover:text-[#F8B400]"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
@@ -118,7 +138,12 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium text-[#E6E6E6] hover:text-white transition-colors duration-300`}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300
+                  ${
+                    isActive(item.href)
+                      ? 'text-[#F8B400]'
+                      : 'text-[#E6E6E6] hover:text-[#F8B400]'
+                  }`}
               >
                 {item.name}
               </a>
