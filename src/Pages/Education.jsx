@@ -26,7 +26,7 @@ const Education = () => {
       id: 1,
       degree: "B.Tech in AI and Data Science",
       institution: "Sharad Institute of Technology",
-      details: "CGPA: 6.89 | 2021–2025",
+      details: "CGPA: 7.06 | 2021–2025",
       icon: "🎓",
     },
     {
